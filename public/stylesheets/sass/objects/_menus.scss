@@ -1,0 +1,163 @@
+.o-menu {
+    background-color: $nav-bg-color;
+    border-color: $nav-bg-color;
+    color: $nav-bg-color;
+    font-family: $nav-font;
+    font-size: $nav-font-size;
+    text-transform: $nav-font-transform;
+    nav {
+        //@include calculated-width(100%, $nav-left-padding);
+        height: $nav-height;
+        //background-size: $nav-logo-width $nav-logo-height;
+        background-image: url($nav-logo-url);
+        background-repeat: no-repeat;
+        background-color: $nav-bg-color;
+        background-position: $nav-logo-margin-left center;
+        padding-left: $nav-left-padding;
+        .o-menu__logo {
+            img {
+                position: relative;
+                top: 4px;
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                padding: 0 15px;
+                display: inline;
+                a {
+                    color: $nav-font-color;
+                    text-transform: uppercase;
+                    text-shadow: none;
+                    display: inline-block;
+                    text-decoration: none;
+                    color: $nav-font-color;
+                    font-size: $nav-font-size;
+                    &:focus {
+                        background-color: $nav-bg-color;
+                        color: $nav-font-color;
+                    }
+                    &:hover {
+                        background-color: $nav-bg-color;
+                        color: $nav-font-color;
+                    }
+                }
+            }
+        }
+    }
+    &--active {
+        color: $nav-font-color-selected;
+    }
+}
+
+.o-menu--right {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+
+.o-menu__floating {
+    display: inline-block;
+    position: fixed;
+    z-index: 999;
+    max-height: 200px;
+    background-color: #fff;
+    &.hidden {
+        display: none;
+    }
+    &.left {
+        @include s-top-arrow-head--left($floating-menu-width);
+    }
+    &.right {
+        @include s-top-arrow-head--right($floating-menu-width);
+    }
+    &#contextMenu {
+        ul {
+            padding: 0;
+            li {
+                list-style: none;
+                a {
+                    width: $floating-menu-width;
+                    padding-top: $context-menu-link-padding-top;
+                    padding-right: $context-menu-link-padding-right;
+                    padding-bottom: $context-menu-link-padding-bottom;
+                    padding-left: $context-menu-link-padding-left;
+                    text-decoration: none;
+                    color: $nav-font-color;
+                    font-size: $nav-font-size;
+                    display: block;
+                    &.active {
+                        color: $context-menu-current-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.o-menu__user {
+    color: $body-bg-color;
+    position: relative;
+    .o-menu__circle {
+        z-index: 20;
+        position: absolute;
+        top: -7px;
+        right: 20px;
+        .o-menu__circle__color--user {
+            background: $blue-user;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            border-radius: 50%;
+            &:hover {
+                border-radius: 50%;
+            }
+        }
+        .o-menu__circle__color--store {
+            background: $green-user;
+            width: 17px;
+            height: 5px;
+            position: absolute;
+            border-radius: 51%;
+            top: 20px;
+            left: 4px;
+        }
+    }
+}
+.o-user__name {
+    right: 4px;
+    position: absolute;
+    top: -4px;
+    z-index: 30;
+    font-size: 14px;
+    color: $body-bg-color;
+}
+
+@media(max-width: 765px) {
+    .o-menu--left {
+        float: left;
+        width: 100%;
+    }
+    .o-menu--right li {
+        float: left;
+        top: -8px;
+    }
+    .o-menu .o-menu__logo {
+        display: none;
+    }
+    .o-menu .o-menu__logo--responsive {
+        display: block;
+    }
+    .o-menu__menu--responsive {
+        display: block;
+        margin: 0px;
+    }
+    .o-menu .o-menu__item--active a {
+        background-color: #666666;
+        color: #ffffff;
+    }
+    .o-menu .o-menu--left ul {
+        margin: auto;
+    }
+}

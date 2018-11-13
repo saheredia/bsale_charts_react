@@ -1,0 +1,22 @@
+common: &default_settings  
+  license_key: 0579336419061376fb68c031760d26e6a3a3362a
+  app_name: ImxBaseUIReact
+  log_level: info
+
+development:
+  <<: *default_settings  
+  app_name: ImxBaseUIReact (Development)
+  developer_mode: true
+
+test:
+  <<: *default_settings
+  app_name: ImxBaseUIReact (Test)
+  monitor_mode: false
+
+staging:
+  <<: *default_settings
+  app_name: ImxBaseUIReact (Staging)
+
+production:
+  <<: *default_settings
+  license_key: e998397eaf68295d0dfb20d4f5228df210684ab5

@@ -1,0 +1,70 @@
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple,
+.select2-selection.select2-selection--multiple,
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple,
+.select2-container.select2-container--default.select2-container--focus select2-container--below,
+.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus {
+  outline: none!important;
+  border: none;
+}
+
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple,
+.select2-selection.select2-selection--multiple,
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple,
+.select2-container.select2-container--default.select2-container--focus select2-container--below,
+.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus {
+  border-bottom: $border-thickness dashed $border-color;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: rgba( $select-bg-color-selected, $select-bg-color-hover-opacity);
+  color: $select-font-color-hover;
+}
+
+.select2-container--default .select2-results__option[aria-selected="true"] {
+  background-color: rgba( $select-bg-color-selected, $select-bg-color-opacity);
+  color: $select-font-color-selected;
+}
+
+.select2-container--default .select2-results__option[aria-disabled="true"] {
+  color: $select-bg-color-disabled;
+}
+
+.select2-container--default {
+  &>span {
+    /*width: 100%;*/
+  }
+}
+
+.select2-selection__rendered {
+  padding-left: 0px!important;
+  text-transform: capitalize!important;
+}
+
+.select2-dropdown,
+.select2-container--open .select2-dropdown--below,
+.select2-container--open .select2-dropdown--above {
+  @include s-border-radius($border-radius);
+  border-width: $border-thickness;
+  border-style: solid;
+  border-color: $border-color-inactive;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: $body-bg-color;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border: none;
+}
+
+.select2-selection.select2-selection--multiple {
+  border-bottom: $input-border-width $input-border-style $input-border-color!important;
+}
+
+select:focus {
+  border:none;
+}

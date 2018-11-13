@@ -1,0 +1,239 @@
+/*****************************************************************************
+Archivo CSS en el que se definen los colores estándares utilizadas por Bsale
+Desarrollado por:
+
+Gustavo Montero
+Septiembre 2016
+Versión 1.1
+****************************************************************************/
+//Font
+$font-name: '"Open Sans", sans-serif' !default; //nombre de la fuente
+$font_path: "fonts" !default; // carpeta donde esta
+$OpenSansVersion: "1.1.0" !default; //version de OpenSans
+
+//pantalla
+$min-screen: 960px; //pantalla minima
+
+
+// grays
+$c-silver-light: #F8F8F8;
+$silver:	#eee; //gris clarro
+$light-gray:#ccc;
+$gray:		#999; // gris
+$semi-dark: #666;
+$dark:		#333; //gris oscuro
+
+//color /*todos llevan c- al comienzo del nombre*/
+$c-error: 		#ffdd57 !default; // amarillo
+$c-action: 		#0099cc !default; //celeste
+$c-light-blue: 	rgb(204,235,245)!default; //celeste
+$c-bsale: 		#FF6815 !default; //naranjo
+$c-bsale-light:	#ffb38a !default; //naranjo claro
+
+//color texto
+	$t-error: rgba(0,0,0,0.7);
+
+//shadow
+$shadow-bsale: 0px 3px 6px 0px rgba($gray,0.5);
+$shadow-hover-bsale: 0px 6px 12px 0px rgba($semi-dark,0.5);
+
+//font
+$w-normal: 400;
+$w-semibold: 600;
+
+//hover-color
+$hover-action: rgba($c-action,0.6);
+
+//Icono Imaginex
+$nameIconImagx: "iconos-imx" !default;
+$body-font-color-active: #FBA918;
+$body-font-color-inactive: #ccc;
+
+//header
+$h-height: 42px; //altura header
+
+//margin
+$container-margin:20px;
+
+
+/*******************
+	ANTIGUOS
+********************/
+
+
+
+
+$nav-height: 40px; //alto del menu
+$nav-logo-margin-left: 15px; //separacion de logo bsale desde el margen
+$nav-logo-width: 80px; //ancho del logo
+$nav-logo-height: 30px; //alto del logo
+$nav-logo-url: '../../images/bsale.png'; //ruta del logo
+$nav-bg-color: #666666; //color de fondo del menu
+$nav-font-color: #aaaaaa; // color de letra
+$nav-font-size: 16px; // temaño de letra
+$nav-font-color-selected: #ffffff; // color de letra activa
+$nav-font: $font-name; //fuente del menu
+$nav-link-padding-left: 15px;
+$nav-link-padding-right: 11px;
+$nav-link-padding-top: 12px;
+$nav-link-padding-bottom: 8px;
+$nav-font-size: 16px;
+$nav-font-transform: uppercase;
+$nav-button-height: 25px; //tamaño de botones
+$nav-button-width: 21px; //tamaño de botones
+$nav-left-padding: 109px; //separacion de los links desde el logo
+$left-right-margin: 10px;
+$context-menu-link-padding-top: 10px;
+$context-menu-link-padding-right: 10px;
+$context-menu-link-padding-bottom: 10px;
+$context-menu-link-padding-left: 20px;
+$context-menu-current-color: #545454;
+$border-thickness: 0.5pt; //grosor de los bordes
+$border-color: #cccccc; //color de los bordes
+$border-radius: 3px; //redondeo de esquinas
+$border-color-active: #fba918; //color de borde activo
+$border-color-inactive: #cccccc; //color de borde inactivo
+//Info de usuario
+$blue-user: #506A91;
+$green-user: #CEE433;
+
+
+//Default user
+$body-action-color:  #0099cc;//nuevo color #FF6815 viejo;
+$body-menu-font-transform: uppercase;
+$body-menu-left-margin: 20px; //margen derecho menu secundario
+$body-menu-right-margin: 20px; //margen derecho menu secundario
+$body-menu-top-margin: 10px; //margen superior menu secundario
+$body-menu-icon-right: 40px; //posision izquierda de boton panel izquierdo
+$body-header-height: 40px; //alto del encabezado
+$body-footer-height: 40px; //alto del pie
+$body-row-height: 30px; //alto de filas
+$body-row-top-margin: 10px; //margen superior de un fila
+$body-row-bottom-margin: 20px; //margen inferior de un fila
+$body-margin: 20px; //margen inferior de un fila
+
+
+//fuente del menu secundario
+$body-header-nav-font: $font-name;
+$body-header-nav-font-size: 18px;
+$body-header-nav-font-transform: uppercase;
+//fuente del body
+$body-font: $font-name;
+$body-font-size: 14px;
+$body-font-color: #999;
+$body-font-color-active: #666666;
+$body-font-color-highlighted: #999;
+//color de fuente en estado "activo"
+$body-font-color-inactive: #cccccc; //color de fuente en estado "inactivo"
+$body-font-color-light: #cccccc; //color de fuente en estado "inactivo"
+//color de fondo
+$body-bg-color: #fff;
+$bg-color: $c-silver-light;
+$body-left-width: 70%; //ancho panel derecho
+$body-right-width: 30%; //ancho panel izquierdo
+//padding del body
+$body-top-padding: 20px; //padding superior
+$body-bottom-padding: 20px; //padding inferior
+$body-left-padding: 60px; //padding derecho
+$body-right-padding: 30px; //pading izquierdo
+$body-scroll-with: 10px; //ancho del scrollbar
+$body-top-padding-right: 10px; //padding superior
+$body-left-padding-right: 30px; //padding derecho
+$content-max-width: 1170px;
+$content-margin-top: 20px;
+$content-margin-bottom: 20px;
+$content-padding: 30px;
+$submit-bg-color: $body-action-color; //#7c7995; //color de fondo de boton de guardado
+$submit-bg-color-hover: darken($submit-bg-color,5%);
+$submit-font-color: #ffffff; //color de texto de boton de guardado
+$submit-padding: 5px;
+$submit-bg-color-active: #ccc;
+$action-bg-color: #ffffff;
+$action-font-color: #333333;
+$action-padding: 5px;
+
+
+
+
+
+//Variables asociados a los radios
+$radius-small: 2px !default;
+$radius: 3px !default;
+$radius-large: 5px !default;
+
+// Colors
+
+$black: hsl(0, 0%, 4%) !default;
+$black-bis: hsl(0, 0%, 7%) !default;
+$black-ter: hsl(0, 0%, 14%) !default;
+
+$grey-darker: hsl(0, 0%, 21%) !default;
+$grey-dark: hsl(0, 0%, 29%) !default;
+$grey: hsl(0, 0%, 48%) !default;
+$grey-light: hsl(0, 0%, 71%) !default;
+$grey-lighter: hsl(0, 0%, 86%) !default;
+
+$white-ter: hsl(0, 0%, 96%) !default;
+$white-bis: hsl(0, 0%, 98%) !default;
+$white: hsl(0, 0%, 100%) !default;
+
+$orange: hsl(14, 100%, 53%) !default;
+$yellow: hsl(48, 100%, 67%) !default;
+$green: hsl(141, 71%, 48%) !default;
+
+$alert-color: #FFDD57 !default;
+//$turquoise: hsl(171, 100%, 41%) !default;
+$turquoise: #FF6815;
+$bsale-color: #FFB38A;
+$blue: hsl(217, 71%, 53%) !default;
+$purple: hsl(271, 100%, 71%) !default;
+$red: hsl(348, 100%, 61%) !default;
+
+////// Text colors//////////////////
+$text: $grey-dark !default;
+
+
+/**************************
+	BULMA.io
+***************************/
+////// Responsiveness/////////////////////////////
+// The container gap, which acts as the offset for breakpoints
+$gap: 24px !default;
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px !default;
+// 960px container + 3rem
+$desktop: 960px + 2 * $gap !default;
+// 1152px container + 3rem
+$widescreen: 1152px + 2 * $gap !default;
+// 1344px container + 3rem
+$fullhd: 1344px + 2 * $gap !default;
+
+/**************
+	FORM
+***************/
+$form-label: 			$body-font-color-highlighted;
+$form-label-checkbox: 	$action-font-color;
+$input-color: 			$action-font-color;
+
+
+//SELECT 2 variable
+$select-bg-color-selected: #FF6815; //color de fondo <select> para opcion seleccionada
+$select-bg-color-opacity: 0.7; //color de fondo <select> para opcion seleccionada
+$select-font-color-selected: #ffffff; //color de fondo <select> para opcion seleccionada
+$select-bg-color-hover: #FF6815; //color de fondo <select> para opcion con foco
+$select-bg-color-hover-opacity: 0.7; //color de fondo <select> para opcion seleccionada
+$select-bg-color-disabled: #ccc;
+$select-font-color-hover: #ffffff; //color de fondo <select> para opcion con foco
+$floating-menu-width: 200px; //ancho de menu flotante
+$error-color: #95420b;
+$button-min-width: 70px;
+$button-status-padding: 10px;
+
+$input-border-style: dashed;
+$input-border-color: #cccccc;
+$input-border-width: 1px;
+$input-option-hover: rgba($body-action-color,0.2);
+$input-option-selected: rgba($body-action-color,1);
+$input-option-lock:rgba($body-action-color,0.2);
+$close-color: #ffffff;
+$close-color-hover: #333333;

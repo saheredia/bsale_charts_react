@@ -1,0 +1,46 @@
+/*****************************************************************************
+Archivo CSS en el que se definen los colores estándares utilizadas por Bsale
+Desarrollado por:
+
+Gustavo Montero
+Septiembre 2016
+Versión 1.0
+****************************************************************************/
+/* BEGIN Light */
+@font-face {
+  font-family: '#{$font-name}';
+  @include s-fontdef($font_path, $OpenSansVersion, "Light"); //en mixin
+  font-weight: 300;
+  font-style: normal;
+}
+/* END Light */
+
+/* BEGIN Semibold */
+@font-face {
+  font-family: '#{$font-name}';
+  @include s-fontdef($font_path, $OpenSansVersion, "Semibold");
+  font-weight: 600;
+  font-style: normal;
+}
+/* BEGIN Bold */
+@font-face {
+  font-family: '#{$font-name}';
+  @include s-fontdef($font_path, $OpenSansVersion, "Bold");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* END Bold */
+
+/**************************************
+    ICONOS
+**************************************/
+
+
+@font-face {
+  font-family: '#{$nameIconImagx}';
+  @include s-iconfontdef($font_path, $nameIconImagx);
+  font-weight: normal;
+  font-style: normal;
+
+}

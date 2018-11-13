@@ -1,0 +1,154 @@
+/*********************************+
+  objects/select2/core-scss
+*********************************/
+
+//test
+.select2-container {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  @import "single";
+  @import "multiple";
+}
+
+@import "dropdown";
+
+.select2-close-mask {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  z-index: 99;
+
+  // styles required for IE to work
+  filter: alpha(opacity=0);
+}
+
+.select2-hidden-accessible {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+@import "theme/default/layout";
+@import "theme/classic/layout";
+@import "_lock";
+
+/********************
+    blind class
+*********************/
+%single-input{
+  @include border-radius(0px); //reset border
+  border:0;
+  border-bottom:$input-border-width $input-border-style $input-border-color;
+  height:auto;
+  padding:$body-font-size/3 0px;
+  background:inherit;
+}
+%border-complete{
+  border: $input-border-color //border color
+          $input-border-width //border width (ancho)
+          solid;              //type
+}
+
+
+/***********************
+    edit class select2
+***********************/
+.select2-container{
+    .select2-selection{
+
+      &--single{ // select2 simple
+        @extend %single-input;
+        &[aria-expanded="true"]{
+          @extend %border-complete;
+        }//aria
+        .select2-selection__rendered{
+          line-height: inherit; // se pitea line-height original 
+        }
+      }//--single
+
+
+      &--multiple{ // select 2 multiple
+        border-radius:$border-radius;
+        @extend %border-complete;
+       &[aria-expanded="true"]{
+          //border-color:$border-color-active;
+        }//aria
+        .select2-selection__rendered{
+          .select2-selection__choice{
+            border:1px solid $input-option-selected;
+            color: $input-option-selected;
+            background:transparent;
+            border-radius: $body-font-size;
+            padding: 0 10px 0 5px;
+            &.lock{
+              background:$input-option-lock;
+
+            }
+            &__remove{
+              color:darken($body-action-color,5%);
+              margin-right:5px;
+              border-radius:50%;
+              display:inline-flex;
+              justify-content: center;
+              width: $body-font-size;
+              //line-height: $body-font-size;
+            }
+            &__remove:hover{
+               color:white;
+               background: $hover-action;
+            }
+          }
+        }
+        .select2-search--inline{
+          margin: 0 5px 0 0;
+          display:flex;
+          .select2-search__field{
+            margin:0;
+          }
+        }
+      }//multiple
+    }//selection
+    &.select2-container--focus{
+        .select2-selection-multiple{
+          background:yellow;
+          border-color: $border-color-active;
+
+        }  
+    }
+}
+.select2-dropdown{
+  @extend %border-complete;
+  .select2-results{
+    &__option{
+      
+    }//__option
+    &__option--highlighted[aria-selected]{ //:hover
+        color: inherit;
+        background:$input-option-hover;//$input-option-hover;
+    }//aria
+    &__option[aria-selected=true]{ //selected
+      display:none;
+        background:$input-option-selected;//$input-option-hover;
+    }//aria
+    &__option .select2-results__message{
+      background: $alert-color;
+    }
+  }//select2-results
+}//select2-dropdown
+

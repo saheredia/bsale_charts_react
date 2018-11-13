@@ -1,0 +1,212 @@
+/**********************************
+	_objects.buttons.scss
+***********************************/
+$border:1px;
+
+%btn-img{
+		display:flex;
+		align-items: center;
+		&:before{
+			margin-right:5px;
+		}
+}
+
+.btn{
+	text-align:center;
+	display:inline-block;
+	cursor: pointer;
+	padding: $body-font-size/3 $body-font-size;
+    border: $border solid;
+	border-color:silver;
+	@include border-radius(4px);
+    &:hover {
+        color: $submit-bg-color;
+		border-color: $submit-bg-color;
+    }
+	&.transparent{
+		&, &:hover{
+			border-color:transparent;
+		}
+	}
+    // class="btn action"
+    &.action{
+    	font-weight: $w-semibold;
+    	background-color: $submit-bg-color;
+		border-color:$submit-bg-color;
+    	color: $body-bg-color;
+    	&:hover{
+    		color: $body-bg-color;
+        	background:$submit-bg-color-hover;
+			border-color:$submit-bg-color-hover;
+    	}
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mini-btn{
+	display:inline-block;
+	height:24px;
+	width:24px;
+	border:$gray 1px solid;
+	@include border-radius(500px);
+	&:hover{
+		border-color:$c-action;
+		background-color:white;
+	}
+	&.edit{
+		background: $img-edit;
+		&:hover{
+			background-position: bottom center;
+		}
+	}//edit
+	&.delete{
+		//create x button
+		position:relative;
+		&:after, &:before{
+			position:absolute;
+			top:50%;
+			bottom:50%;
+			left:0;
+			right:0;
+			display:block;
+			content:" ";
+			width:12px;
+			height:1px;
+			background: $gray;
+			margin: auto;
+		}
+		&:hover{
+			&:after, &:before{
+				background: $c-action;
+			}
+		}
+		&:after{
+			transform: rotate(45deg);
+		}
+		&:before{
+			transform: rotate(315deg);
+		}
+	}
+	&.view-online{
+		background:$img-view-online top center ;
+		&:hover{
+			background-position: bottom center;
+		}
+	}
+	&.menu-context.menu-context{
+		&, &:hover{
+			border:0px none;
+			background: $img-menu-context;
+		}
+	}
+	&.payment_info{
+		background: $img-payment_info no-repeat center center ;
+	}
+	&.view-report{
+		background: $img-view-report no-repeat top center;
+		&:hover{
+			background: $img-view-report no-repeat bottom center;
+		}
+	}
+	&.refresh{
+		/*background: $img_refresh no repeat top center;*/
+		&:hover{
+			/*background: $img_refresh no repeat bottom center;*/
+		}
+	}
+
+}//mini-btn
+
+/**********************************
+		input-btn
+***********************************/
+
+.input-btn{
+	display:flex;
+	justify-content: stretch;
+	.btn:last-child{ //si el btn esta a la derecha
+		@include border-radius(0px 4px 4px 0px);
+	}
+	.btn:first-child{ //si el btn esta a la izq
+		@include border-radius(4px 0px 0px 4px);
+	}
+	input:nth-child(2){
+			padding-left: $body-font-size/2;
+	}//input
+	.select:nth-child(2) select{
+			padding-left: $body-font-size/2;
+	}//input
+	.select2-container{
+		overflow:hidden;
+	}
+}
+
+.btn{
+	&.burger_b{
+		background: $img-hamburger-black no-repeat center center;
+		background-size: 24px 24px;
+		height: 24px;
+		width: 24px;
+		content: " ";
+		padding:0px 5px 0px 0px;
+		border:none;
+	}
+}
+
+
+.v-center{
+	display:flex;
+	align-items: center;
+}
+
+/******************************************
+	download
+*******************************************/
+.btn.download{
+		font-weight: $w-semibold;
+		@extend .transparent;
+		@extend %btn-img;
+	&:before{
+		content: $img-download;
+	}
+}

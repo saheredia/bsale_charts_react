@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>tezt select2</title>
+	<link type="text/css" href="core.css" rel="stylesheet"></style>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />-->
+	
+
+</head>
+<body>
+
+
+	<div style="margin:0 auto; max-width:600px; width:100%;">
+
+
+	<section style="margin-bottom:40px">
+		<label for="multi">Select simple</label>
+		<select class="select2">
+			<option value="1" disabled="disabled">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+	</section>
+	
+
+	<section style="margin-bottom:40px">
+		<label for="multi">Select con buscador</label>
+		<select class="select2">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+		</select>
+	</section>
+	
+	
+
+
+	<section style="margin-bottom:40px">
+		<label for="multi">Multiple</label>
+		<select class="select2" id="multi" multiple data-placeholder="Caracteristicas">
+			<option value="1">1</option>
+			<option value="2">Todos los productos</option>
+			<option value="3">Algunos productos</option>
+			<option value="4">Texto completo</option>
+			<option value="5">Etiqueta de nombre extenso</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+		</select>
+	</section>
+
+	<form action="/casa"   method="get">
+	<section style="margin-bottom:40px">
+		<label for="multilock">
+			Datos del cliente
+			<small>Selecciona la información que le pediras al cliente</small>
+		</label>
+		<select id="multilock" class="select2" multiple name="select" data-placeholder="Caracteristicas">
+			<option class="lock" value="NOMBRE" selected>NOMBRE</option>
+			<option class="lock" value="APELLIDO" selected>NOMBRE</option>
+			<option class="lock" value="EMAIL" selected>EMAIL</option>
+			<option value="Elefante">Elefante</option>
+			<option value="DIRECCION">DIRECCION</option>
+			<option value="rut">RUT</option>
+		</select>
+	</section>
+	<button type="submit">ckick</button>
+</form>
+</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+	
+	<script type="text/javascript">
+			function setClass(data, container){
+				if(data.element){
+					//si un elemento tiene un atributo, lo agrega al container como una clase  
+					$(container).addClass($(data.element).attr("class"));
+				}
+				return data.text;
+			};
+
+
+			//ajax delay agregar 
+
+			$(".select2").select2({
+				templateResult: setClass,
+				templateSelection: setClass,
+				width: '100%',
+				minimumResultsForSearch: 5,
+			}).on("select2:unselecting", function(e) {
+  					// si el elemento era "lock" (que no lo queremos borrar)
+  					if ($(e.params.args.data.element).hasClass('lock')) {
+	    				// evita la acción por defecto
+	    				console.log('backspace');
+				        e.preventDefault();
+				        
+							$(".select2").select2('close');
+  					}
+			});
+			$.fn.select2.amd.require([
+  				'select2/selection/multiple',
+  				'select2/selection/search',
+  				'select2/dropdown',
+  				'select2/dropdown/attachContainer',
+  				'select2/dropdown/closeOnSelect',
+  				'select2/utils'
+			], function (MultipleSelection, Search, Dropdown, AttachContainer, CloseOnSelect, Utils) {
+  var SelectionAdapter = Utils.Decorate(
+    MultipleSelection,
+    Search
+  );
+
+  var DropdownAdapter = Utils.Decorate(
+    Utils.Decorate(
+      Dropdown,
+      CloseOnSelect
+    ),
+    AttachContainer
+  );
+
+  $('.select2').select2({
+    dropdownAdapter: DropdownAdapter
+  });
+});
+
+
+			
+
+
+			 //select2
+	
+/*
+
+ 			$(".select2").select2({
+ 				,
+ 				width: 'style="width:100%"',
+ 				templateResuls: function (data, container) {
+    				if (data.element) {
+      					$(container).addClass($(data.element).attr("class"));
+    				}
+    				return data.text;
+  				}
+ 			})//.find(":selected").data("block")
+ 				/*.on("select2:unselect", function (e) {
+		          if ($(e.params.data.element).data('block') ){
+		          	$(this).removeData('state'); 
+		          	e.preventDefault();
+		          	return false;
+		  		  }
+		          //e.params.data
+		          return true;
+		      });*/
+
+
+		      //var test = $(".select2").select2().find(":selected").dataset.lock
+		      //console.log(test);
+		//});
+
+	</script>
+</body>
+</html>

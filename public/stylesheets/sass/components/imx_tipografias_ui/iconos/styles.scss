@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "iconos-imx";
+  src:url("fonts/iconos-imx.eot");
+  src:url("fonts/iconos-imx.eot?#iefix") format("embedded-opentype"),
+    url("fonts/iconos-imx.woff") format("woff"),
+    url("fonts/iconos-imx.ttf") format("truetype"),
+    url("fonts/iconos-imx.svg#iconos-imx") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "iconos-imx" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "iconos-imx" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+  content: "\61";
+}
+.icon-article:before {
+  content: "\62";
+}
+.icon-attach-file:before {
+  content: "\63";
+}
+.icon-back:before {
+  content: "\64";
+}
+.icon-cancel-doc:before {
+  content: "\65";
+}
+.icon-clients-circle:before {
+  content: "\67";
+}
+.icon-close:before {
+  content: "\68";
+}
+.icon-collection:before {
+  content: "\69";
+}
+.icon-config:before {
+  content: "\68";
+}
+.icon-delete:before {
+  content: "\6b";
+}
+.icon-design:before {
+  content: "\6c";
+}
+.icon-details-payment-methods:before {
+  content: "\6d";
+}
+.icon-dimensions:before {
+  content: "\6e";
+}
+.icon-discount:before {
+  content: "\6f";
+}
+.icon-doc-to-send:before {
+  content: "\70";
+}
+.icon-document:before {
+  content: "\71";
+}
+.icon-document-type:before {
+  content: "\72";
+}
+.icon-ecommerce:before {
+  content: "\73";
+}
+.icon-edit:before {
+  content: "\74";
+}
+.icon-filter:before {
+  content: "\75";
+}
+.icon-form:before {
+  content: "\76";
+}
+.icon-giftcard:before {
+  content: "\77";
+}
+.icon-help:before {
+  content: "\78";
+}
+.icon-hito:before {
+  content: "\79";
+}
+.icon-image:before {
+  content: "\7a";
+}
+.icon-payments:before {
+  content: "\42";
+}
+.icon-payment-methods:before {
+  content: "\43";
+}
+.icon-ok:before {
+  content: "\41";
+}
+.icon-new:before {
+  content: "\44";
+}
+.icon-navigation:before {
+  content: "\45";
+}
+.icon-money:before {
+  content: "\46";
+}
+.icon-menu-secondary:before {
+  content: "\47";
+}
+.icon-menu-ppal:before {
+  content: "\48";
+}
+.icon-menu-more:before {
+  content: "\49";
+}
+.icon-menu-less:before {
+  content: "\4a";
+}
+.icon-list:before {
+  content: "\4b";
+}
+.icon-immediate-delivery:before {
+  content: "\4c";
+}
+.icon-preview:before {
+  content: "\4d";
+}
+.icon-price:before {
+  content: "\4e";
+}
+.icon-print:before {
+  content: "\4f";
+}
+.icon-product:before {
+  content: "\50";
+}
+.icon-products-circle:before {
+  content: "\51";
+}
+.icon-products-edit:before {
+  content: "\52";
+}
+.icon-recurrencias-vencidas:before {
+  content: "\53";
+}
+.icon-return:before {
+  content: "\54";
+}
+.icon-sale:before {
+  content: "\55";
+}
+.icon-save:before {
+  content: "\56";
+}
+.icon-search:before {
+  content: "\57";
+}
+.icon-send-email:before {
+  content: "\58";
+}
+.icon-shipping:before {
+  content: "\59";
+}
+.icon-store:before {
+  content: "\5a";
+}
+.icon-submenu-points:before {
+  content: "\30";
+}
+.icon-taxes:before {
+  content: "\31";
+}
+.icon-ticket:before {
+  content: "\32";
+}
+.icon-unread-sent-doc:before {
+  content: "\33";
+}
+.icon-urgent:before {
+  content: "\34";
+}
+.icon-video:before {
+  content: "\35";
+}
+.icon-weight:before {
+  content: "\36";
+}
+.icon-client:before {
+  content: "\66";
+}

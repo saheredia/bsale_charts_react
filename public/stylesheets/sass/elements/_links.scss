@@ -1,0 +1,12 @@
+a[href]{
+  &:hover{
+    color: $c-action;
+  }
+}
+.link{
+  display:inline-block;
+  color: $c-action;
+  &:hover{
+    text-decoration: underline;
+  }
+}

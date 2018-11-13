@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Imaginex WS">
+    <title>Bsale</title>
+    <%= fav_icon_tag 'favicon.png' %>
+    <%= stylesheet_tag 'app.css' %>
+  </head>
+  <body>
+    <% submenu = yield_content(:submenu).to_s.strip %>
+    <%= _render :partial => '/layouts/app.main_menu', :locals => { :submenu => submenu , :market => false }  %>
+    <div class="container">
+      <div class="content">
+        <div class="content-header" id="content-header">
+          <%= yield_content :content_header %>
+        </div>
+        <div class="content-body">
+          <div class="scroll">
+            <div class="scroll-body" id="content-body">
+              <%= yield_content :content_body %>
+            </div>
+          </div>
+        </div>
+        <div class="content-footer" id="content-footer" >
+          <%= yield_content :content_footer %>
+        </div>
+      </div>
+    </div>
+    <script>sesOfficeId = <%= session['office_id'].to_i %></script>
+    <%= yield_content :css %>
+    <%= yield_content :js %>
+    <%= yield_content :scripts %>
+  </body>
+</html>

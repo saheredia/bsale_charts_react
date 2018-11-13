@@ -1,0 +1,15 @@
+/**********************************
+    Helpers
+
+    los helper son clases que sobre escriben una propiedad, casi siempre emplean !important
+    por esta mis
+
+
+************************************/
+
+
+.text{
+  &_center{text-align:center !important}
+  &_right{text-align:right !important}
+  &_left{text-align:left !important}
+}

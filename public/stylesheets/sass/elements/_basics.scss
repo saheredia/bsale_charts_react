@@ -1,0 +1,71 @@
+/***************Estructura General************************/
+
+
+
+
+
+
+
+
+
+body {
+    font-family: "#{$font-name}";
+    @include s-font-size();
+    //font-weight: 300;
+    color: $body-font-color;
+    background-color: $bg-color;
+    //overflow-y: scroll; //el body siempre tiene el scroll evita variar el ancho segun el contenido
+    overflow: auto;
+}
+
+header {
+    width: 100%;
+    padding: 0px;
+}
+
+ h1,  h2,  h3,  h4,  h5,  h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "#{$font-name}";
+    color: $body-font-color;
+}
+ h1,.h1{
+     font-weight: $w-semibold;
+ }
+  h2, h3,
+ .h2,.h3{
+     font-weight: $w-normal;
+ }
+
+strong{
+    font-weight:600;
+}
+
+h1 {
+    @include s-font-size(2);
+}
+
+h2,h3{
+    @include s-font-size(1);
+}
+h4,h5,h6{
+    @include s-font-size(0.5);
+    font-weight: $w-semibold;
+}
+
+main {
+    padding: 0px;
+}
+
+content {
+    max-width: $content-max-width;
+    margin: 0 auto;
+    width: 66%;
+    background-color: $body-bg-color;
+    display: block;
+    margin-top: $content-margin-top;
+    margin-bottom: $content-margin-bottom;
+    padding: $content-padding;
+    box-shadow: 2px 2px 4px 2px $body-font-color-light;
+    -webkit-box-shadow: 2px 2px 4px 2px $body-font-color-light;
+    -moz-box-shadow: 2px 2px 4px 2px $body-font-color-light;
+}

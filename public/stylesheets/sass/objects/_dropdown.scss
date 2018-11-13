@@ -1,0 +1,276 @@
+/********************************
+  _dropdown.scss
+  @Iván Quiñones 
+*********************************/
+//variables
+$padding: 15px;
+$shadow: 0px 0px 5px 0px $light-gray;
+$background:white;
+$border-color: $light-gray;
+$border: $border-color 1px solid;
+$z-index:100;
+$padding: $body-font-size/3 $body-font-size;
+$border-radius: 4px;
+//styles
+.dropdown{
+    display:inline-flex;
+    position:relative;
+    .dropdown-action{
+        display:inline-block;
+        cursor:pointer;
+    }//dropdown-action
+    .dropdown-content{
+        position:absolute;
+        top:100%;
+        min-width:100%;
+        flex-shrink: 0;
+        display:none;
+        z-index:$z-index;
+        box-shadow: $shadow;
+    }//dropdown-content
+    //LISTAS
+    ul.dropdown-content.dropdown-content{
+      flex-direction:column;
+      padding-left:0;
+      padding-right:0;
+      li{
+        display:block;
+        a{
+          padding:$padding;
+          display:block;
+        }
+      }
+    }//listas
+    &.open{
+      box-shadow: 0 0px 5px 0 $light-gray;
+      border-radius: $border-radius;
+      .dropdown-action{
+        z-index:$z-index+1;
+        font-weight: $w-normal;
+      }
+        .dropdown-content{
+            margin-top:-1px;
+            display:flex;
+            padding: $padding;
+            background:$background;
+            white-space:nowrap;
+            border:$border;
+        }
+        .btn{
+          &.dropdown-action{
+            background:$background;
+            @include border-radius($border-radius $border-radius 0 0);
+            border:$border;
+            color: $body-font-color;
+            border-bottom-color: $background;
+          }
+        }
+    }//.open
+    &.min{
+        box-shadow:0px 0px 0px 0px transparent;
+        &.open{
+          &::before, &::after{
+            position:absolute;
+            margin:0 auto;
+            left:0;
+            right:0;
+            content:" ";
+            width:0px;
+            z-index:$z-index + 1;
+          }
+          &::before{
+            margin-top:1px;
+            top: 100%;
+            border-bottom: 8px solid $border-color ;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+          }
+          &::after{
+            margin-top:2px;
+            top:100%;
+            border-bottom: 7px solid $background ;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+          }
+            .dropdown-action{
+              border:none;
+            }
+            .dropdown-content {
+              margin-top: 8px;
+              padding-top:0;
+              padding-bottom:0;
+              .title{
+                background:$silver;
+              }
+            }
+        }
+    }
+    &.block{
+      .dropdown-content{
+        width:320px;
+        white-space: normal;
+      }
+    }
+    &.menu-item{
+        .dropdown-action{
+            &::after{
+                content:url("images/btn_ui_caret_dark.png");
+                margin: auto 0 auto 5px;
+                display:inline-block;
+            }
+            &:hover::after{
+                content:url("images/btn_ui_caret_white.png");
+            }
+        }
+        &.open{
+          box-shadow: none;
+            .dropdown-action {
+                justify-content: center;
+                font-weight: inherit;
+                &::after {
+                    content: url("images/btn_ui_caret_white.png");
+                }
+            }
+            .dropdown-content{
+              @include border-radius($border-radius);
+              li{
+                a{
+                  display:flex;
+                  flex-direction: column;
+                  span{
+                    display:block;
+                  }
+                }
+              }
+            }
+        }//.open
+    }//.menu-item
+    &.dropheader.dropheader{
+        .dropdown-action{
+            padding:0 20px;
+            display:flex;
+            align-items:center;
+            font-weight: $w-semibold;
+            flex-grow:1;
+            flex-shrink: 1;
+            width:100%;
+        }
+        &.open{
+            box-shadow:none;
+            font-weight: inherit;
+            .dropdown-content{
+                a:hover{
+                  background:$silver;
+                  color:inherit;
+                }
+            }
+        }
+    }
+    &.masters_menu.masters_menu{
+        .dropdown-action {
+          padding-left:0;
+          color:white;
+          background: $c-bsale-light;
+          &::before{
+            content:$img-hamburger;
+            padding: 0px 5px;
+          }
+        }
+        .dropdown-content{
+          text-align:left;
+        }
+    }
+    &.center{
+      justify-content:center;
+    }
+    &.right{
+      justify-content:flex-end;
+      .dropdown-content{
+        text-align:right;
+      }
+
+    }
+}
+  .store-list{
+      .dropdown-action.dropdown-action, .dropdown-action.open.dropdown-action.open{
+          border-right: 1px solid $silver;
+          padding-right:20px;
+          .store{
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow: ellipsis;
+            //width: 100%;
+          }
+          &:after{
+            position:absolute;
+            content: $img-caret-dark;
+            background:transparent;
+            bottom: auto;
+            left:auto;
+            height:auto;
+            right:6px;
+          }
+      }
+  }
+  .store{
+    display:flex;
+    align-items:center;
+    &:before{
+      height:36px;
+      width:36px;
+      margin-right: 5px;
+      font-weight: 300;
+      display:flex;
+      justify-content: center;
+      align-items:center;
+
+    }
+    &.market:before{
+      content:url(https://s3.amazonaws.com/bsalemarket/imagenes/brand_tienda-online.png);
+    }
+    &.meli:before{ //mercado libre
+      content:url(https://s3.amazonaws.com/bsalemarket/imagenes/brand_mercado-libre.png);
+    }
+    &.shopi:before{
+      content:url(https://s3.amazonaws.com/bsalemarket/imagenes/brand_shopify.png);
+    }
+    /**
+    /////borradores
+    &.mercado-ripley:before{
+      content:"R";
+    }
+    &.bootic:before{
+      content:"Bo";
+    }
+    &.shopify:before{
+      content:"Sh";
+    }
+    **/
+  }
+
+/******************************
+    app_contract
+******************************/
+  .app_contract.app_contract{
+    .dropdown{
+      margin: $bulma-margin (-$bulma-margin) (-$bulma-margin);
+      width: calc(100% + (#{$bulma-margin}*2));
+
+      .dropdown-action{
+        z-index:0;
+        padding: $bulma-margin;
+        width:100%;
+        border-top:1px solid $silver;
+      }
+      .dropdown-content{
+        top:0px;
+        border:0px none;
+        padding: $bulma-margin;
+        box-shadow:$shadow-bsale;
+        border-top:1px solid $silver;
+      }
+      &.open{
+        box-shadow:none;
+      }
+    }
+  }

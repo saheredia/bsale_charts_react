@@ -1,0 +1,105 @@
+<header class="header">
+  <div class="main-menu">
+    <div class="menu-logo">
+    </div>
+    <ul class="menu-list">
+      <% Menu.get('bs_mnu_main').each do |menu|%>
+        <li class="menu-item <%= 'active' if URI.parse(request.url.to_s).path.to_s.include?(menu[:href].to_s.gsub("/goto?owner=#{UiService.settings.menu_owner}&url=", "")) %>">
+          <a href="<%= menu[:href]%>"><%= menu[:text]%></a>
+        </li>
+      <% end %>
+    </ul>
+    <ul class="menu-settings">
+      <li>
+        <a class="btn-help" target="bsale_support" href="https://bsalehelp.zendesk.com/hc/es?">SOS</a>
+      </li>
+      <li>
+        <div class="dropdown min right">
+          <div class="dropdown-action">
+            <a class="icon o-icon-config btn-settings" href="#"></a>
+          </div>
+          <ul class="dropdown-content">
+            <% Menu.get('bs_mnu_settings').each do |menu|%>
+              <li>
+                <a href="<%= menu[:href]%>"><%= menu[:text]%></a>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="dropdown min right">
+          <div class="dropdown-action">
+            <a class="btn-user" href="javascript:void(0);"><%= session['user_name'].to_s.slice(0,1) %></a>
+          </div>
+          <ul class="dropdown-content">
+            <li class="title">
+              <a><%= session['office_name'].to_s %></a>
+            </li>
+            <!--<li><a href="">Cambio de Sucursal</a></li>-->
+            <li><a href="/goto?owner=bsale&url=/login/companies_list">Cambio de Empresa</a></li>
+            <li><a href="/goto?owner=bsale&url=/change_pass">Cambio de Clave</a></li>
+            <li><a href="/goto?owner=bsale&url=/my_apps">Mis Sistemas</a></li>
+            <li><a href="/pe/login/logout">Salir</a></li>
+
+          </ul>
+
+        </div>
+        <div class="user-info">
+          <span class="name"><%= session['cpn_name'].to_s %></span>
+          <span class="sucursal"><%= session['office_name'].to_s %></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <% if submenu.to_s.strip.length > 0 %>
+    <div class="main-submenu maright">
+      <% if market %>
+          <div id="vue-instance" class="dropdown dropheader store-list" v-bind:class="{ open: isOpen}" >
+            <div id="current-store" class="dropdown-action" @click="toggleMenu()">
+                <a href="javascript:void(0);" class="store">
+                <span :class="type" v-if="selectedOption != 1 " > {{selectedOption.configurations.site_name}}</span>
+                <span class="store market" v-if="selectedOption === 1"> {{placeholderText}}</span>
+                </a>
+            </div>
+            <ul class="dropdown-content" >
+                <li v-for="option in options" v-bind:value="option.id">
+                  <a :href="option.routeFinal" class="store-select" @click="updateOption(option)">
+                    <span class="store" :class="option.type">{{ option.configurations.site_name }}</span>
+                  </a>
+                </li>
+            </ul>
+          </div>
+      <% else %>
+        <div class="dropdown dropheader store-list"></div>
+      <% end %>
+      <ul class="menu-list">
+        <% Menu.get(submenu).each do |menu| %>
+          <% if menu[:submenu].length > 0 %>
+            <%
+            txt = menu[:text]
+            active = ""
+            current_mnu = menu[:submenu].select { |sml| URI.parse(request.url.to_s).path.to_s == sml[:href].to_s.gsub("/goto?owner=#{UiService.settings.menu_owner}&url=", "") }
+            if current_mnu.length > 0
+              txt = current_mnu[0][:text]
+              active = "active"
+            end
+            %>
+            <li class="menu-item dropdown <%= active %>">
+              <a class="dropdown-action" href="javascript:void(0);"><%= txt %><span class="caret"></span></a>
+              <ul class="dropdown-content">
+                <% menu[:submenu].each do |submenu| %>
+                  <li><a href="<%= submenu[:href] %>"><%= submenu[:text] %></a></li>
+                <% end %>
+              </ul>
+            </li>
+          <% else %>
+            <li class="menu-item <%= 'active' if URI.parse(request.url.to_s).path.to_s == (menu[:href].to_s.gsub("/goto?owner=#{UiService.settings.menu_owner}&url=", "")) %>"><a href="<%= menu[:href] %>"><%= menu[:text] %></a></li>
+          <% end %>
+        <% end %>
+      </ul>
+      <div class="dropdown dropheader masters_menu right"></div>
+    </div>
+  <% end %>
+
+</header>

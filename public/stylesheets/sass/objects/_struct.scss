@@ -1,0 +1,524 @@
+/*
+.o-container {
+    width: 100%;
+    &__left {
+        background-color: $body-bg-color;
+        float: left;
+        width: 100%;
+        padding: 0px;
+    }
+    &__right {
+        float: left;
+        padding: 0px;
+        display: none;
+    }
+    &__header {
+        border-bottom: 1px solid $body-font-color-light;
+        padding: 0px;
+        margin: 0px;
+        height: $body-header-height;
+        position: relative;
+        font-size: $body-header-nav-font-size;
+        &__menu {
+            float: left;
+        }
+        &__title {
+            padding: 7px 0 0 20px;
+            float: left;
+        }
+    }
+    &__title {
+        margin: -1px 0px 0px 20px;
+        position: relative;
+        text-transform: $body-menu-font-transform;
+        float: left;
+    }
+    &__item {
+        padding: 10px;
+        //float: left;
+    }
+}
+*/
+
+/**********************
+    container
+**********************/
+
+.container{
+    min-width:962px;
+    margin:0 $container-margin;
+    padding: 0.75em; //reset margin columns
+    .content{
+        min-height: calc(100vh - 84px - 40px);
+        background:white;
+        padding: $body-font-size ($body-font-size*2) ($body-font-size*2);
+        @include shadow(2px, 2px, 4px, 2px, #ccc);
+        margin-bottom: $body-margin;
+        .body-base{
+
+        }
+        .footer-sale{
+
+        }
+
+        .collection{
+            .product{
+
+                @include mobile{
+                }
+                .info{
+                    @extend .is-vcentered;
+                    @include touch{ //cuando sea formato mobile
+                        padding-bottom: 0.75rem;
+                        .detail{
+                            .column{
+                                padding: 0 0.75rem;
+                                &:first-child{
+                                    padding-top: 0.75rem;
+                                }
+                                &:last-child{
+                                    padding-bottom: 0.75rem;
+                                }
+                            }
+                        }
+                    }
+                }
+               .unit{
+                    @include tablet{
+                        display:flex;
+                    }
+                    small{
+                        font-size: $body-font-size;
+                        font-weight: $w-semibold;
+                        margin-right: $body-font-size/4;
+                    }
+                }
+                .min-img{
+
+                }
+                .action{
+                    @include absolute-size(100px, auto);
+                }
+                .price{
+                    @extend .is-narrow;
+                    @include absolute-size(100px, auto); //comm
+                    @include mobile{
+                        padding: 0 0.75rem;
+                    }//mobile
+                }
+                .name{
+                    font-weight: $w-semibold;
+                }
+                .status{
+                    @include border-radius($body-font-size);
+                    padding: 0 $body-font-size/2;
+                    border: 1px solid;
+                    display:inline-block;
+
+                    &.sending{
+                        border-color:$gray;
+                        background:$silver;
+                        color:$gray;
+                    }
+                    &.published{
+                        border-color: $c-action;
+                        background:rgba($c-action, 0.2);
+                        color: $c-action;
+
+                    }
+                    &.error{
+                        border-color: $c-error;
+                        background: $c-error;
+                        color: $t-error;
+                    }
+                }
+
+            }
+        }
+    }
+    .helper{
+        margin-left:$container-margin;
+        @include all-title(){
+            font-weight: $w-semibold;
+            color: $dark;
+            &.title{
+                margin-bottom: $container-margin;
+            }
+        }
+
+
+        .result{
+            .element{
+                color:$body-font-color-highlighted;
+                padding: ($body-font-size/2) 0px;
+                &:not(:first-child){
+                    border-top:1px solid $silver;
+                }
+                .name{
+                    display:block;
+                    font-size: $body-font-size;
+                    font-weight: $w-semibold;
+                    &:hover{
+                        color:$body-action-color;
+                    }
+                }
+            }
+        }//result
+
+
+    }
+}
+.icon-title{
+    & +.subtitle{
+
+        display:block;
+        margin-left:30px;
+    }
+}//.icon-title
+
+/***************************
+        count
+******************************/
+
+    .count{
+        display:inline-block;
+        font-size:0.8em;
+        color: $gray;
+        margin-left: $body-font-size/2;
+        &:before{content:"(";}
+        &:after{content:")";}
+    }//count
+
+
+
+
+/****************
+    summary
+*****************/
+//resumen en cupon
+
+.summary{
+    border: 1px solid $action-font-color;
+    padding: $body-margin/2;
+    margin-bottom: $body-margin/2;
+    @include border-radius(4px);
+    .type{
+        color:$action-font-color;
+        font-size:2em;
+        font-weight: 700;
+    }
+    .code{
+        padding:0.5em 0;
+        small{
+            display:block;
+        }//small
+        span{
+            color:$body-action-color;
+            font-size:1.5em;
+        }
+    }//code
+    .details{
+        margin: 0 (-$body-margin/2);
+        padding: $body-margin/2;
+        border-top: 1px solid $action-font-color;
+        li{
+            list-style-type: disc;
+            margin-left: $body-font-size*2;
+        }
+    }
+    .promo-name{
+        color:$action-font-color;
+    }
+}
+
+
+
+/*****************************
+    container bsale // actualizacion
+****************************/
+body{
+    display:flex;
+}
+.header{
+    flex:none;
+    >div:last-child{
+        background:white;
+    }
+}
+.container{
+    height: 100%;//calc(100vh - #{$h-height*2}); // alto iigual al 100% de la pantalla menos el header
+    min-width: $min-screen;
+    padding:20px 20px 20px 30px; //margenes del contenedor
+    display:flex;
+
+    min-height: 460px;
+    margin:0;
+    .content{
+        width:72%;
+        background: white;
+        box-shadow: $shadow-bsale;
+        padding:0 40px 0 50px;
+    }//content
+    .helper{
+        width:28%; //ancho helper
+        padding-left: 50px;
+    }//helper
+
+    //estructua content y helper
+    .content, .helper{
+        overflow:hidden;
+        display:table; /*display table anula margin, se tiene que usar padding*/
+        height:100%;
+        border-spacing: 0px 10px; //left-rigth / top-bottom//
+        border-collapse: separate;
+        &-header{
+            display :table-row; //anular margin y padding necesita un child con estar caracteristica
+            &-content{
+                display:flex;
+                justify-content: space-between;
+            }
+        }
+        &-body{
+            display:table-row;
+            height:100%;
+            width:100%;
+            /*necesarios para hacer el contenido scrolleable*/
+
+        }
+        &-footer{
+            display :table-row;
+            &-content{
+                text-align:right;
+            }
+        }
+        //define zona scroleable
+
+    }
+
+    .right{
+        float:right;
+    }
+    @include all-title{
+        display:block;
+        text-align:left;
+    }
+
+}
+
+.scroll{
+    position:relative;
+    height: 100%;
+    .scroll-body{
+        overflow-y:auto;
+        overflow-x:hidden;
+        position: absolute;
+        top: 10px;
+        right:0;
+        bottom: 10px;
+        left: 0;
+        border-right:rgba(silver,0.2) solid 1px;
+        //padding-right:20px;
+    }//scroll-body
+}//scroll
+
+
+
+
+/*actualización structure febrero*/
+
+
+body{
+    display:flex;
+    flex-direction: column;
+    height:100vh;
+}
+
+.container{
+    display:flex;
+    .content, .helper{
+        display:flex;
+        flex-direction:column;
+        &-header, &-footer{
+            display:block;
+            flex:none; //elimimnar flex
+        }
+        &-body{
+            width:100%;
+            display:flex;
+            flex-grow: 1;
+            padding:10px 0;
+        }
+        &-header{
+            padding-top:10px;
+        }
+        &-footer{
+            padding-bottom:10px;
+        }
+        .scroll{
+            position:relative;
+            height: 100%;
+            width:100%;
+            .scroll-body{
+                overflow-y:auto;
+                overflow-x:hidden;
+                position: absolute;
+                top: 0;
+                right:0;
+                bottom:0;
+                left: 0;
+                border-right:rgba(silver,0.2) solid 1px;
+            }//scroll-body
+        }//scroll
+    }
+    .content{
+        width:100%;
+    }
+    .helper{
+        width:43%;
+    }
+}
+
+/**************************************
+        REPORT
+**************************************/
+
+.report{
+    //
+    padding:0.75rem;
+    &.header{
+        font-weight: $w-semibold;
+        font-size:0.75rem;
+        padding-top: 0px;
+        padding-bottom:0px;
+        border-bottom: rgba(192, 192, 192, 0.2) solid 1px;
+        .columns{
+            margin-top:-0.75rem;
+        }
+    }
+    li{
+        border-bottom: 1px solid $silver;
+        /*.column{
+        }
+        &:nth-child(odd){
+            background:rgba($silver,0.25);
+        }*/
+        &:hover{
+            background:rgba($c-light-blue,0.25);
+        }
+    }//li
+}//report
+
+
+
+.block{
+    display:block;
+}
+.is-oneLine{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/****************************************
+        TAG
+*************************************** */
+
+
+
+.tag{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    margin: -2px -4px;
+    .columns &{
+        margin:5px 0.75rem 0;
+    }
+    li{
+        border:1px solid $silver;
+        background:$c-silver-light;
+        padding:2px 4px;
+        font-size:0.75rem;
+        white-space:nowrap;
+        margin: 2px 2px;
+        border-radius:4px;
+        font-weight: $w-semibold;
+    }
+}//tag
+
+.tag2{
+    background:$c-silver-light;
+    width:100%;
+    .columns &{
+        margin:5px 0.75rem 0;
+        padding: 0.25rem 0.75rem;
+    }
+    li{
+        float:left;
+        font-size:0.75rem;
+        font-weight: $w-semibold;
+        background:transparent;
+        border:0px none;
+        &:not(:first-child){
+            list-style-type: disc;
+            margin-left:25px;
+        }
+    }
+}
+
+
+
+.app_store{
+    flex-wrap:wrap;
+    align-items:stretch;
+    display:flex;
+    min-width:960px;
+    max-width:960px;
+    margin:0 auto;
+    h1{
+        width:100%;
+        margin: ($bulma-margin) ($bulma-margin) 0px;
+    }
+    .app_contract{
+        width:calc((100%/3) - (#{$bulma-margin}*2)) ;
+        margin: $bulma-margin;
+        text-align:center;
+        background:white;
+        padding: $bulma-margin;
+        box-shadow:$shadow-bsale;
+        display:flex;
+        flex-direction:column;
+        justify-content: space-between;
+        &:hover, &:focus{
+            box-shadow:$shadow-hover-bsale;
+        }
+        .info{
+            h2{
+                text-align:center;
+                font-weight: $w-semibold;
+            }
+            p{
+                font-size:12px;
+            }
+        }
+        .price{
+            font-weight: $w-semibold;
+            padding-bottom: $bulma-margin;
+        }
+        form{
+            width:100%;
+        }
+    }
+}
+
+.is-left {
+  text-align: left;
+}
+
+
+.is-centered {
+  text-align: center;
+}
+
+.is-right {
+  text-align: right;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "imx_base_ui_react",
+  "version": "1.0.0",
+  "description": "Codigo base para aplicaciones Sinatra+Webpack+Babel+ReacJS",
+  "private": true,
+  "scripts": {
+    "dev": "webpack --config webpack.config.js --mode development --progress -w",
+    "build": "webpack --config webpack.config.js --mode production --progress"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  }
+}

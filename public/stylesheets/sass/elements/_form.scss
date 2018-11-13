@@ -1,0 +1,70 @@
+/*****************************
+    form & form element
+******************************/
+
+//blind class
+
+%input{
+    padding: $body-font-size/3 0px (($body-font-size/3) - 1);
+    color: $input-color;
+    border-bottom:$input-border-width $input-border-style $input-border-color;
+    width: 100%;
+}
+
+//element
+//////////////////////7
+
+$form-b-margin: $body-margin;
+
+form, .form{
+  margin-bottom:-$form-b-margin;
+  text-align:center;
+  input, textarea, button, .select, .select2, .chosen-container{
+      margin-bottom:$form-b-margin;
+  }
+  .input-btn{
+    margin-bottom:$form-b-margin;
+    >*{
+      margin:0;
+    }
+  }
+  @include all-title(){
+    text-align:left;
+  }
+}
+
+button, input, select,textarea{
+    font-size:$body-font-size;
+    font-family: "#{$font-name}";
+}
+
+
+select, textarea, input:not([type="submit"]){
+    @extend %input;     
+}
+
+label{
+  display:block;
+  font-weight: 600;
+  color:$body-font-color-highlighted;
+  text-align:left;
+  small{
+    font-weight: 400;
+    display:block;
+  }
+}
+
+//contenido del bloque
+@media(max-width: 700px) {
+    content {
+        width: 100%;
+    }
+}
+
+.wrap{
+  flex-wrap: wrap;
+  width: 100%;
+}
+    
+.maright {
+  margin-right: -100px;}

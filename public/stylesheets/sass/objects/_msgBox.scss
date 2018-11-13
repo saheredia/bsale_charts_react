@@ -1,0 +1,42 @@
+.o-msgBoxOverlay {
+  background-color: #000;
+  opacity: .8;
+}
+
+.o-msgBox {
+  background-color: #fff;
+  @include s-border-radius($border-radius);
+  display: block;
+  position: absolute;
+  width: 85%;
+  h2 {
+    @include s-border-radius($border-radius);
+    background-color: #F5EDDE;
+    color: #666666;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    height: 18px;
+  }
+  .body {
+    color: #545555;
+    padding: 15px;
+    text-align: justify;
+    max-height: 200px;
+    label {
+      display: inline-block;
+      width: auto;
+      vertical-align: middle;
+      line-height: 150%;
+    }
+  }
+  .footer {
+    padding: 15px;
+    padding-top: 25px;
+    text-align: center;
+  }
+}

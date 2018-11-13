@@ -1,0 +1,25 @@
+
+.js-with-panel--left{
+    width: (8/$grid-columns)*100%;
+    height: s-calc('height', 100vh, $body-footer-height );
+    .o-buttom-icon{
+        display: none;
+    }
+    .c-order__export{
+        right: 15px;
+    }
+}
+.js-with-panel--right{
+    width: (4/$grid-columns)*100%;
+    border-left: 1px solid $border-color;
+    display: block;
+}
+
+@media(max-width: 765px) {
+    .js-with-panel--left{
+        display: none;
+    }
+    .js-with-panel--right{
+        width: 100%;
+    }
+}

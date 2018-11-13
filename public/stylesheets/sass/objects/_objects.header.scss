@@ -1,0 +1,283 @@
+/***************************
+	_objects.header.scss
+****************************/
+
+$h-height: 42px; //altura header
+$font-menu: 16px;
+$font-submenu:15px;
+$margin-header: 20px;
+
+.header{
+	a{
+		white-space: nowrap;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+	}
+}
+// Silent Class
+%menu-bar{
+	display:flex;
+	justify-content: space-between;
+	height: $h-height;
+	margin: 0 ($container-margin * -1);
+}
+%hover-item{
+	background:lighten($c-bsale-light, 10%);
+	color:white;
+}
+
+/*
+header.header{
+	color:$semi-dark;
+	box-shadow: $shadow-bsale;
+	padding: 0 $container-margin;
+	min-width:$min-screen;
+	width:100%;
+	font-weight:600;
+
+	.menu-list{
+		min-width: 720px;
+		width: 60%;
+		max-width: 920px;
+		margin: 0 $margin-header;
+		display: table;
+		.menu-item{
+			display:table-cell;
+    		text-align: center;
+    		vertical-align: middle;
+    		>a{justify-content:center;}
+    		li{text-align: left;}
+		}
+	}
+}
+*/
+.main-menu{
+	font-size: $font-menu;
+	@extend %menu-bar;
+
+	&.no-submenu{
+		background:white;
+	}
+
+	.menu-logo{
+		min-width:106px + $container-margin;
+		max-width:106px + $container-margin;
+		background: $img-logo center top no-repeat;
+		&.active, &:hover{
+			background-color:$c-bsale;
+			background-position: center bottom;
+		}
+	}//.menu-logo
+
+    .menu-item{
+        a{
+            height: $h-height;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            padding: 0 10px;
+            @media only screen and (min-width:1060px){
+                padding: 0 15px;
+            }
+            &:hover{
+                @extend %hover-item;
+            }//a:hover
+        }//a
+        &.active a{
+            background:$c-bsale-light;
+            color:white;
+        }
+    }//menu item
+	
+	.menu-settings{
+		width:106px;
+		padding-right:$container-margin;
+		display:flex;
+		justify-content: space-between;
+		>li{
+			display:flex;
+			align-items: center;
+			a{
+				font-size: $body-font-size*0.85;
+				font-weight: $w-semibold;
+				@include border-radius($h-height);
+			}
+		}
+		.btn-settings, .btn-help, .btn-user{
+			height: $h-height*0.6;
+			text-align:center;
+			display:flex;
+			align-items: center; //vertical
+			justify-content: center; //horizontal
+		}
+		.btn-settings{
+			font-size:20px;
+		}
+		.btn-help{
+			background:$c-bsale-light;
+			padding: 0 $body-font-size/2;
+			color:white;
+		}
+		.btn-user{
+			background: #555;
+			width: $h-height*0.6;
+			color:white;
+		}
+	}//.menu-settings
+}//main-menu
+.main-submenu{
+	@extend %menu-bar;
+	justify-content: space-between; //distribuye los 3 item
+	
+	.menu-list{
+		font-size:$font-submenu;
+		@include shadow(0px,2px, 0px, 0px, $c-bsale-light, false);
+
+		@media screen and (max-width:1200px){
+			font-size:$font-submenu * 0.95;
+		}
+	}
+	.menu-item.menu-item{
+		height: $h-height;
+		display:flex;
+		align-items: center;
+		/*
+		margin: 0px $body-font-size/4;
+		&:first-child{margin-left: 0px;}
+		&:last-child{margin-right: 0px;}
+		*/
+		 >a{
+			padding: $body-font-size/4 $body-font-size/2;
+			@include border-radius($body-font-size);
+			&:hover{
+				@extend %hover-item;
+			}//a:hover
+		 }//a
+		&.dropdown > a{
+			position:relative;
+		}
+		&.active, &.open{
+			>a {
+				background: $c-bsale-light;
+				color: white;
+			}
+		}
+	}//menu item
+}
+
+
+
+
+/*actualización febrero*/
+header.header{
+    color:$semi-dark;
+    box-shadow: $shadow-bsale;
+    padding: 0 $container-margin;
+    min-width:$min-screen;
+    width:100%;
+    font-weight:600;
+
+    a{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+	.main-menu, .main-submenu{
+		display:flex;
+		flex-grow:1; //ancho automatico
+		.menu-list{
+			display:flex;
+			width: 60%;
+			max-width: 920px;
+			min-width:620px;
+
+			.menu-item{
+				flex-grow:1;
+				align-items: center; //horizontal
+                justify-content:center; //vertical
+				small{
+					font-weight: $w-normal;
+				}
+			}
+		}
+		.dropheader, .menu-settings, .menu-logo{
+			width:20%;
+			max-width:260px;
+			min-width:50px;
+			box-sizing: border-box;
+		}
+		.menu-logo{
+			background-position:$margin-header top;
+			&:hover, &.active {
+				background: $img-logo no-repeat $margin-header bottom,
+							linear-gradient(
+								to right,
+								$c-bsale (106px +($margin-header*2)),
+								transparent (106px +($margin-header*2))
+							);
+			}
+		}
+		.menu-settings{
+			justify-content:flex-end;
+			>li{
+				margin:0 2px;
+				&:first-child{
+					margin-left:0;
+				}
+				&:last-child{
+					margin-right:0;
+				}
+			}
+			@media screen and (min-width: 1346px){
+				.dropdown-content{
+					.title{
+						display:none;
+					}
+				}
+			}
+
+			.user-info{
+				overflow:hidden;
+				margin-left:5px;
+				display:flex;
+				flex-direction: column;
+				align-items: left;
+				font-size: 0.7rem;
+				max-width:140px;
+				.name, .sucursal{
+					display:block;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					width:100%;
+					&:not(.name){
+						font-weight: $w-normal;
+					}
+				}
+				@media screen and (max-width: 1346px){
+					display: none;
+				}
+			}
+		}
+		.menu-list{
+			.menu-item{
+				ul{
+					color:$gray;
+					font-size:0.8rem;
+				}
+			}
+		}
+	}
+	.main-submenu{
+		.menu-item{
+			display:flex;
+		}
+	}
+
+    @media screen and (max-width:1244px) {
+		.menu-item{
+			font-size:13.5px;
+		}
+    }//@media
+
+}

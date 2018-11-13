@@ -1,0 +1,144 @@
+.o-loader__horizontal {
+  height: 3px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #ddd;
+  &:before {
+    display: block;
+    position: absolute;
+    content: "";
+    left: -200px;
+    width: 200px;
+    height: 3px;
+    background-color: $body-font-color-light;
+    animation: loading 4s linear infinite;
+  }
+  @keyframes loading {
+    from {
+      left: -200px;
+      width: 30%;
+    }
+    50% {
+      width: 30%;
+    }
+    70% {
+      width: 70%;
+    }
+    80% {
+      left: 50%;
+    }
+    95% {
+      left: 120%;
+    }
+    to {
+      left: 100%;
+    }
+  }
+}
+
+
+/**************************Loading*********************/
+
+//loading principal
+.o-loading {
+  position: absolute;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  .spinner {
+    border: 16px solid #f3f3f3;
+    @include s-border-radius(50%);
+    border-top: 16px solid $border-color;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    background-color: $body-bg-color;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  .text {
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    text-align: center;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/********************************************
+  LLOAD POINTS
+
+  <psan class="loadpoint"></span>
+******************************************** */
+$color-lp: $gray;
+$time-lp: 1.5s;
+$size-lp: $body-font-size/2;
+
+@keyframes opacy_left {
+  0%    {background: rgba($color-lp,1);}
+  33.3%   {background: rgba($color-lp,0);}
+  66.6%   {background: rgba($color-lp,0);}
+  100%   {background: rgba($color-lp,0);}
+}
+@keyframes opacy_center {
+  0%    {background: rgba($color-lp,0);}
+  33.3%   {background: rgba($color-lp,1);}
+  66.6%   {background: rgba($color-lp,0);}
+  100%   {background: rgba($color-lp,0);}
+}
+@keyframes opacy_right {
+  0%    {background: rgba($color-lp,0);}
+  33.3%   {background: rgba($color-lp,0);}
+  66.6%   {background: rgba($color-lp,1);}
+  100%   {background: rgba($color-lp,0);}
+}
+
+.loadpoint{
+  &, &:before, &:after{
+    display:inline-flex;
+    width: $size-lp;
+    height: $size-lp;
+    border-radius:$size-lp/2;
+  }
+  &{
+    margin:$size-lp $size-lp*2;
+    position:relative;
+    animation: opacy_center $time-lp infinite;
+  }
+  &:before, &:after{
+    position:absolute;
+    content:" ";
+  }
+  &:before{
+    right:100%;
+    margin-right:$size-lp/2;
+    animation: opacy_left $time-lp infinite;
+  }
+  &:after{
+    left:100%;
+    margin-left:$size-lp/2;
+    animation: opacy_right $time-lp infinite;
+  }
+}

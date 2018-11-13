@@ -1,0 +1,185 @@
+/*************************************
+    INPUT[date]
+
+    Use
+    -----------------------
+
+    <label class="date">
+        <input class=daterange">
+    </label>
+
+    <script> (controller)
+    $('.daterange').daterangepicker(lang_es_multi);
+
+
+    NEED
+    ---------------------
+    jQuery
+    1. moment.min.js
+    2. daterangepicker.js
+    3. datepicker_es.js
+
+
+
+*************************************/
+
+//$variables
+//-----------------------
+$padding-calendar: 15px;
+$bk-calendar:white;
+
+//input
+//----------------------
+
+ label.date{
+      display:flex;
+      align-items: center;
+      &:before{
+          content:$img-calendar;
+          margin-right:5px;
+      }
+      input{
+           text-align:center;
+           width:auto;
+           padding-left: $padding-calendar + 5px;
+           margin-left: -($padding-calendar + 5px);
+      }
+      .daterange{
+           font-weight: $w-semibold;
+           cursor:pointer;
+      }
+ }
+
+//calendar
+//-------------------------------
+.dropdown-menu{
+  position:absolute;
+  display:none;
+}
+
+
+
+//calendar
+.daterangepicker_input{
+    display:none
+}
+.daterangepicker{
+  border-radius:4px;
+  box-shadow: 2px 2px 4px 2px $silver;
+  background:$bk-calendar;
+  border:1px solid $light-gray;
+  margin-top:-1px;
+  .calendar{
+    padding: $padding-calendar/2 $padding-calendar;
+
+    &.left{
+      float:left;
+    }
+    &.right{
+      float:right;
+    }
+    .prev:before, .next:before{
+      content:$img-caret-dark;
+    }
+    .prev{
+      transform:rotate(90deg);
+    }
+    .next{
+      transform:rotate(-90deg);
+    }
+  }
+}
+
+.table-condensed{
+  border-collapse: collapse;
+  tbody{
+    tr{
+      border:2px solid $bk-calendar;
+
+    }
+  }
+}
+.calendar-table{
+  cursor:pointer;
+  td,th{
+    width:calc(100%/7);
+    font-size: $body-font-size;
+    vertical-align:center;
+    text-align:center;
+  }
+  th{
+    font-weight: $w-semibold;
+    cursor:default;
+  }
+  td{
+    font-weight: $w-normal;
+    height:30px;
+    width:30px;
+    &.in-range{
+      background: $c-light-blue;
+    }//in-range
+    &:hover{
+      box-shadow: inset 0px 0px 0px 2px $c-action;
+    }
+    &.start-date, &.end-date{
+      background: $c-action;
+      color:white;
+      position:relative;
+    }//start, end
+    &:not(.off):not(.end-date):not(:last-child).start-date:after,
+    &:not(.off):not(.start-date):not(:first-child).end-date:after {
+      content: " ";
+      position: absolute;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      top: 0;
+      bottom: 0;
+    }
+    &.start-date:after{
+      border-left: 6px solid $c-action;
+      left:100%;
+    }
+    &.end-date:after{
+      border-right: 6px solid $c-action;
+      right:100%;
+    }
+    &.off{
+      color:$light-gray;
+      background:$bk-calendar;
+      &:hover{
+        box-shadow: 0px 0px 0px 0px;
+        cursor: default;
+      }
+    }//off
+  }
+}
+
+
+//range filter
+.ranges{
+  padding:0px $padding-calendar $padding-calendar;
+  ul{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    padding: $padding-calendar;
+    margin: -$padding-calendar;
+    border-top:1px solid $light-gray;
+    li{
+      border-radius: 1000px;
+      padding: $padding-calendar/4 $padding-calendar;
+      cursor:pointer;
+      &.active{
+        color:white;
+        background:$c-action;
+      }
+      &:hover{
+        background:$silver;
+      }
+      &:last-child{
+        display:none;
+      }
+    }
+  }
+  .range_inputs{display:none}
+}

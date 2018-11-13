@@ -1,0 +1,38 @@
+/************************************
+    iconos e imagenes utilizadas
+    @ivan;
+************************************/
+
+$url: "images";
+
+$img-logo:  url('#{$url}/new_bsale.png?1');
+$img-hamburger-black: url('#{$url}/btn_mae_options_black.png');
+$img-hamburger: url('#{$url}/btn_mae_options.png');
+$img-search:  url('#{$url}/ico_buscador.png');
+
+
+
+$img-caret-dark:url('#{$url}/btn_ui_caret_dark.png');
+
+/** local
+$img-mercadolibre:url('#{$url}/brand_mercado-libre.png?1');
+$img-store:url('#{$url}/icon-tienda-online.png?1');
+**/
+
+$img-store: url('https://s3.amazonaws.com/bsalemarket/imagenes/brand_tienda-online.png');
+$img-mercadolibre: url('https://s3.amazonaws.com/bsalemarket/imagenes/brand_mercado-libre.png');
+$img-edit: url('#{$url}/btn_doc_edit.png?1');
+$img-view-online: url('#{$url}/btn_view_online.png?1');
+$img-menu-context: url('#{$url}/btn_menu_context.png?1');
+$img-calendar: url('#{$url}/calendar.png');
+$img-view-report: url('#{$url}/img_view_report.png');
+$img-view-report: url('#{$url}/img_refresh.png');
+
+
+
+
+
+
+$img-download: url('#{$url}/download.png');
+
+$img-payment_info: url('#{$url}/btn_payment_info.png') ;

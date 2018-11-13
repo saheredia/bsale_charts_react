@@ -1,0 +1,137 @@
+[data-icon]:before {
+  font-family: $nameIconImagx;
+  content: attr(data-icon);
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none ;
+  font-size: 21px;
+  speak: none;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[data-icon]:hover {
+  text-decoration: none;
+}
+[class^="o-icon-"]:before,
+[class*=" o-icon-"]:before {
+  font-family: $nameIconImagx ;
+  font-style: normal ;
+  font-weight: normal ;
+  font-variant: normal ;
+  text-transform: none ;
+  font-size: 21px;
+  text-decoration: none;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class^="o-icon-"]:hover,
+[class*=" o-icon-"]:hover {
+  text-decoration: none;
+}
+.o-icon-add:before {
+  content: "\61";
+}
+.o-icon-attach-file:before {
+  content: "\62";
+}
+.o-icon-back:before {
+  content: "\63";
+}
+.o-icon-cancel-doc:before {
+  content: "\64";
+}
+.o-icon-client:before {
+  content: "\65";
+}
+.o-icon-close:before {
+  content: "\66";
+}
+.o-icon-config:before {
+  content: "\67";
+}
+.o-icon-details-payment-methods:before {
+  content: "\68";
+}
+.o-icon-doc-to-send:before {
+  content: "\69";
+}
+.o-icon-document:before {
+  content: "\6a";
+}
+.o-icon-filter:before {
+  content: "\6b";
+}
+.o-icon-help:before {
+  content: "\6c";
+}
+.o-icon-hito:before {
+  content: "\6d";
+}
+.o-icon-search:before {
+  content: "\6e";
+}
+.o-icon-return:before {
+  content: "\6f";
+}
+.o-icon-recurrencias-vencidas:before {
+  content: "\70";
+}
+.o-icon-product:before {
+  content: "\71";
+}
+.o-icon-print:before {
+  content: "\72";
+}
+.o-icon-pos:before {
+  content: "\73";
+}
+.o-icon-new:before {
+  content: "\74";
+}
+.o-icon-menu-secondary:before {
+  content: "\75";
+}
+.o-icon-menu-ppal:before {
+  content: "\76";
+}
+.o-icon-menu-more:before {
+  content: "\77";
+}
+.o-icon-menu-less:before {
+  content: "\78";
+}
+.o-icon-list:before {
+  content: "\79";
+}
+.o-icon-immediate-delivery:before {
+  content: "\7a";
+}
+.o-icon-send-email:before {
+  content: "\41";
+}
+.o-icon-shipping:before {
+  content: "\42";
+}
+.o-icon-submenu-points:before {
+  content: "\43";
+}
+.o-icon-unread-sent-doc:before {
+  content: "\44";
+}
+.o-icon-save:before {
+  content: "\45";
+}
+.o-icon-preview:before {
+  content: "\46";
+}
+.o-icon-delete:before {
+  content: "\47";
+}
+.o-icon-edit:before {
+  content: "\48";
+}
+
+

@@ -1,0 +1,13 @@
+.select2-selection__choice{
+  &.lock{
+    background:blue;
+    .select2-selection__choice__remove{
+      display:none !important;
+    }
+  }//lock
+}
+.select2-results__option{
+  &.lock{
+    display:none;
+  }
+}

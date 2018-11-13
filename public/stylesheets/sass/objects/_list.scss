@@ -1,0 +1,54 @@
+/*
+	objects/_list.scss
+*/
+
+.list-item{
+
+	.item.item{
+		border-top: 1px #ccc solid;
+		padding:10px 10px 10px 0;
+
+		&:not(.expired){
+			h2{
+				color: $body-action-color;
+				font-weight: $w-semibold;
+			}
+		}
+
+		.item-content{
+			display:block;
+			padding: 0 10px;
+			@include all-title{
+				margin:0;
+			}//mixin
+			.feature{
+				li{
+					list-style-type:disc;
+				}//li
+			}//.feature
+			.edit-info{
+				font-size:12px;
+			}	
+		}//item-content
+
+	}//.item
+
+	
+}//list-item
+
+/*
+Lista inline 
+item • item  • item • item • item
+*/
+
+ul.inline{
+	overflow:hidden;
+	li{
+		float:left;
+		margin-left: $body-font-size*2;
+		&:first-child{
+			list-style-type:none;
+			margin:0;
+		}
+	}//li
+}//inline

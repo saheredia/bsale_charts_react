@@ -1,0 +1,65 @@
+.bootstrap-switch-primary {
+    background-color: $body-action-color !important;
+}
+
+.t-texto__gris {
+    color: $body-font-color-active;
+}
+
+.t-mouse-pointer {
+    cursor: pointer;
+}
+
+.t-hidden {
+    display: none;
+}
+
+.t-buttom--active {
+    color: $body-action-color;
+    &hover {
+        color: $body-font-color-active;
+    }
+}
+
+.t-hidden {
+    display: none;
+}
+
+.t-bold {
+    font-weight: bold;
+}
+
+.t-uppercase {
+    text-transform: uppercase;
+}
+
+.t-right {
+    float: right;
+}
+
+.scrollbar-track.scrollbar-track-x .scrollbar-thumb.scrollbar-thumb-x {
+    display: none;
+}
+
+.t-align-center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+[role="button"] {
+    cursor: pointer;
+}
+
+.t-pull--left {
+    float: left;
+}
+
+.t-pull--right {
+    float: right;
+}
+
+.t-highlighted {
+    color: $body-action-color;
+    text-transform: uppercase;
+    font-weight: normal;
+}

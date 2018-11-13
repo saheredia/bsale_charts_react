@@ -1,0 +1,123 @@
+.c-config__checkout {
+    &__content {
+        width: 100%;
+        &__client {
+            border: $border-thickness solid $border-color;
+            min-height: 100px;
+            padding: 15px 0;
+            margin: 20px 0;
+            display: inline-block;
+            width: 100%;
+            span {
+                background-color: $body-font-color-inactive;
+                @include s-border-radius(20px);
+                padding: 4px 10px;
+                margin: 5px;
+            }
+            &__attribute {
+                border: $border-thickness solid $border-color;
+                background-color: $body-bg-color !important;
+                display: inline-flex;
+                &__remove {
+                    position: relative;
+                    padding: 0;
+                    right: -7px;
+                    i {
+                        font-size: 20px;
+                    }
+                }
+            }
+            &__help {
+                position: absolute;
+                right: 15px;
+                bottom: 12px;
+            }
+        }
+        &__typedoc {
+            border: $border-thickness solid $border-color;
+            padding: 15px;
+            position: relative;
+            margin: 15px 0;
+            &__remove {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            &__label {
+                float: left;
+                margin-right: 20px;
+                margin-top: 5px;
+            }
+            &__input {
+                float: left;
+                width: 70%;
+            }
+            &__client {
+                border-top: $border-thickness solid $border-color;
+                min-height: 50px;
+                padding: 15px 0;
+                margin: 15px -15px -15px -15px;
+                span {
+                    background-color: $body-font-color-inactive;
+                    @include s-border-radius(20px);
+                    padding: 4px 10px;
+                    margin: 5px;
+                }
+            }
+            &__fields_help {
+                border: none;
+                background: #fff !important;
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+                padding: 0px !important;
+            }
+        }
+    }
+    &__columns {
+        width: 50%;
+        &--left {
+            float: left;
+            width: 50px;
+        }
+        &--right {
+            float: left;
+            width: calc(100% - 50px);
+        }
+    }
+    &__client {
+        &__attribute {
+            border: $border-thickness solid $border-color;
+            background-color: $body-bg-color;
+        }
+    }
+    .prueba {
+        width: 100%;
+    }
+    &__container {
+        padding: 30px 15px;
+    }
+}
+
+.c-config__checkout__icon {
+    &--price {
+        position: absolute;
+        color: $body-font-color-highlighted;
+    }
+}
+
+.c-config__checkout__input {
+    &--price {
+        text-align: right;
+    }
+}
+
+.c-config__checkout__buy {
+    padding: 0;
+    &--right {
+        float: right;
+    }
+    &--left {
+        float: left;
+    }
+}

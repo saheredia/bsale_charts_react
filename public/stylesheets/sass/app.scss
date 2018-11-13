@@ -1,0 +1,65 @@
+/**
+ * ITCSS port of Imaginex v1.1
+ *
+ * 1. Settings................Global variables, config switches.
+ * 2. Tools...................Default mixins and functions.
+ * 3. Generic.................Ground-zero styles (resets, box-sizing).
+ * 4. Elements................Unclassed HTML elements (type selectors).
+ * 5. Objects.................Cosmetic-free design patterns.
+ * 6. Components..............Designed components, chunks of UI.
+ * 7. Trumps..................Helpers and overrides.
+ *
+ */
+
+// Settings
+@import "settings/_variables",
+		"settings/_images",
+		"settings/_columns";
+// Tools
+@import "tools/_mixins",
+		"tools/_fuctions",
+		"tools/_clearfix",
+		"tools/_tools.mixin_grid", //mixin grid bulma
+		"tools/_grid-framework";
+// Generic
+@import "generic/_reset";
+// Elements
+@import "elements/_form",
+		"elements/_fonts",
+		"elements/_links",
+		"elements/_basics",
+		"elements/_box";
+		//"elements/_section"; // NO USADA
+// Objects
+@import "objects/_list",
+		"objects/_objects.buttons",
+		"objects/_icono_imaginex",
+		"objects/_icono_material",
+		"objects/_grid",
+		"objects/_loading",
+		"objects/_struct",
+		"objects/_menus",
+		"objects/_msgBox",
+		"objects/_objects.header",
+		"objects/select2/core.scss",
+		"objects/_dropdown",
+		"objects/_objects.datepicker",
+		"objects/_objects.form",
+		"objects/_objects.helpers",
+		"objects/_importer";
+
+
+/* CUSTOM */
+
+// Components
+@import "components/_config.checkout.scss";
+@import "components/imx_tipografias_ui/iconos/styles.scss"; /* iconos bsale*/
+
+/* END CUSTOM */
+
+// Trumps
+@import "trumps/_helpers.scss";
+@import "trumps/_javascripts.scss";
+@import "trumps/_ag-grid.scss";
+@import "trumps/_vue-tabs.scss";
+@import "trumps/_select2.scss";

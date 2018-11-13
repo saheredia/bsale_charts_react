@@ -1,0 +1,123 @@
+/*********************************
+Reset
+
+@autor: Iván Quiñones 
+
+**********************************/
+
+::-moz-focus-inner { 
+  border: 0;
+}
+
+body,p{
+	margin: 0;
+}
+// elimina la suma de padding con width, ahora el padding se le resta al width manteniendo siempre el tamaño 
+div, 
+header, 
+section, 
+article, 
+aside, 
+nav, 
+main,
+input,
+select,
+textarea,
+h1,h2,h3,h4,h5,h6{
+	box-sizing:border-box;
+}
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figcaption,
+figure,
+main{
+  display: block;
+  margin:0;
+  padding:0;
+}
+
+/************
+	LINK
+*************/
+a{
+	&,&:hover,&:focus,&:active,&:link,&:visited{
+		text-decoration: none;
+		color:inherit;
+	}
+	&:focus{
+		outline:0 !important;
+	}
+	::-moz-focus-inner { 
+      border: 0;
+    }
+}
+/*************
+	Listas
+*************/
+ol, ul, li {
+    list-style: none outside none;
+    margin:0;
+    padding:0;
+}
+
+/************
+	FORM
+************/
+
+textarea, input, select{
+	border: none;
+    background: none;
+    background-color: transparent;
+	font-family: inherit;
+	&,&:focus{
+    	outline: none;
+    	-webkit-box-shadow:none;
+    	-moz-box-shadow:none;
+    	box-shadow:none;
+    }//status
+}//textarea, input, select
+
+input[type="submit"], button{
+	color: inherit;
+	background:none;
+	white-space: nowrap;
+	-moz-user-select: none;
+}
+
+select{ //reset apariencia nativa 
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}//select
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-text-fill-color: inherit;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+//titulos margen 0
+@include all-title{
+	margin:0;
+	padding:0;
+}

@@ -1,0 +1,24 @@
+#Desarrollo
+development:
+  bway_api: http://ec2-54-183-147-121.us-west-1.compute.amazonaws.com:8080
+  menu_api: http://ec2-54-183-147-121.us-west-1.compute.amazonaws.com:8282
+  notify_track_url: http://ec2-13-56-234-8.us-west-1.compute.amazonaws.com:9494
+  bsale_api: http://ec2-54-183-147-121.us-west-1.compute.amazonaws.com:8181
+  report_api: http://ec2-13-57-202-136.us-west-1.compute.amazonaws.com:9595
+  report_api_pe: http://ec2-13-57-202-136.us-west-1.compute.amazonaws.com:9494
+  market_admin_api: http://ec2-54-183-147-121.us-west-1.compute.amazonaws.com:8585
+  product_api: http://ec2-54-183-186-35.us-west-1.compute.amazonaws.com:8181
+  message_broker_api: 'http://ec2-54-183-147-121.us-west-1.compute.amazonaws.com:8787'
+
+
+#Produccion
+production:
+  bway_api: http://api.bway.com
+  menu_api: 'http://menu-api.bsale.com'
+  notify_track_url: 'http://track-api.bhelp.cl'
+  bsale_api: 'https://api.bsale.cl'
+  report_api_pe: 'http://report-pe.api.bsale.com'
+  report_api: 'https://reports.bsale.cl'
+  market_admin_api: 'http://market-admin.api.bsale.com'
+  product_api: 'http://product-api.bsale.com'
+  message_broker_api: 'http://message-broker.api.bsale.com'

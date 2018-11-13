@@ -1,0 +1,96 @@
+@mixin s-fontdef($OpenSansPath, $OpenSansVersion, $FontType:"Regular") {
+  src: url('#{$OpenSansPath}/OpenSans-#{$FontType}.eot?v=#{$OpenSansVersion}');
+  src: url('#{$OpenSansPath}/OpenSans-#{$FontType}.eot?#iefix&v=#{$OpenSansVersion}') format('embedded-opentype'),
+  url('#{$OpenSansPath}/OpenSans-#{$FontType}.woff2?v=#{$OpenSansVersion}') format('woff2'),
+  url('#{$OpenSansPath}/OpenSans-#{$FontType}.woff?v=#{$OpenSansVersion}') format('woff'),
+  url('#{$OpenSansPath}/OpenSans-#{$FontType}.ttf?v=#{$OpenSansVersion}') format('truetype'),
+  url('#{$OpenSansPath}/OpenSans-#{$FontType}.svg?v=#{$OpenSansVersion}##{$FontType}') format('svg');
+}
+
+@mixin s-iconfontdef($font_path,
+$nameFont) {
+  src: url('#{$font_path}/#{$nameFont}.eot');
+  src: url('#{$font_path}/#{$nameFont}.eot?#iefix') format('embedded-opentype'),
+  url('#{$font_path}/#{$nameFont}.woff') format('woff'),
+  url('#{$font_path}/#{$nameFont}.ttf') format('truetype'),
+  url('#{$font_path}/#{$nameFont}.svg##{$nameFont}') format('svg');
+}
+
+@mixin s-full-circle($radius) {
+  height: $radius;
+  width: $radius;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+}
+
+@mixin s-semi-circle($radius) {
+  height: $radius/2;
+  width: $radius;
+  border-radius: $radius $radius 0 0;
+  -moz-border-radius: $radius $radius 0 0;
+  -webkit-border-radius: $radius $radius 0 0;
+}
+
+@mixin s-calc($method,
+$a,
+$b) {
+  #{$method}: -webkit-calc(#{$a} - #{$b});
+  #{$method}: -moz-calc(#{$a} - #{$b});
+  #{$method}: calc(#{$a} - #{$b});
+}
+
+@mixin s-font-size($sizeValue: 0) {
+  font-size: ($sizeValue * 2) +$body-font-size;
+}
+
+@mixin s-top-arrow-head {
+  /*punta de flecha*/
+  position: absolute;
+  background: $body-bg-color;
+  border: $border-thickness solid $border-color;
+  &:after {
+    top: -6px;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid $body-bg-color;
+    border-left: 6px solid transparent;
+  }
+  &:before {
+    top: -7px;
+    border-right: 6px solid transparent;
+    border-left: 7px solid transparent;
+    border-bottom: 7px solid $body-font-color-light;
+  }
+}
+
+@mixin s-top-arrow-head--left($width) {
+  left: -1*$body-margin;
+  &:after,
+  &:before {
+    left: 12px;
+    position: absolute;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    content: '';
+  }
+  @include s-top-arrow-head;
+}
+
+@mixin s-top-arrow-head--right($width) {
+  right: -1*$body-margin;
+  &:after,
+  &:before {
+    right: 12px;
+    position: absolute;
+    display: inline-block;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    content: '';
+  }
+  @include s-top-arrow-head;
+}
+
+@mixin s-border-radius($radius) {
+  /*bordes redondeados compatible con los distintos navegadores*/
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
